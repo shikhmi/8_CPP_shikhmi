@@ -396,3 +396,9 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+# Игнорирование папки
+/нелюбимая папка
+
+# Игнорирование файлов Word
+*.docx
