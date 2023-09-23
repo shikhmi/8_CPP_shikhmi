@@ -92,7 +92,7 @@ void print_reversed(list* cur_list)
 // Удаление элемента с конца списка
 void delete_back(list* cur_list)
 {
-    if(is_list_empty(cur_list))
+    if (is_list_empty(cur_list))
     {
         setlocale(LC_ALL, "Rus");
         std::cout << "список пуст";
@@ -104,14 +104,14 @@ void delete_back(list* cur_list)
         cur_list->first = nullptr;
         cur_list->last = nullptr;
     }
-    else 
+    else
     {
         list_item* p_tmp = cur_list->last;
         cur_list->last = cur_list->last->previous;
         cur_list->last->next = nullptr;
         delete p_tmp;
     }
-    
+
 }
 
 // Удаление элемента из начала списка
@@ -136,7 +136,7 @@ void delete_front(list* cur_list)
         cur_list->last->previous = nullptr;
         delete p_tmp;
     }
-    
+
 }
 
 int main()
