@@ -2,11 +2,24 @@
 //
 
 #include <iostream>
-#include <vector>
 #include <cmath>
-std::vector<int> primarynumbers(int upbound)
+
+int* IncreaseArray(int* arr,int n)
 {
-    std::vector<int> prnums = {};
+    int* newarr = new int[n+1];
+
+    for (int i = 0; i < n; i++)
+    {
+        newarr[i] = arr[i];
+    };
+    newarr[n] = 0;
+    return newarr;
+};
+
+int* primarynumbers(int upbound)
+{
+    int* prnums = new int[1];
+    int size = 1;
     for (int inumber = 2; inumber < upbound; inumber++)
     {
         bool isprimary = true;
@@ -22,7 +35,7 @@ std::vector<int> primarynumbers(int upbound)
         };
         */
         int i = 0;
-        while (i < prnums.size() && prnums[i] < std::pow(upbound, 0.5) && isprimary)
+        while (i < size && prnums[i] < std::pow(upbound, 0.5) && isprimary)
         {
 
             if (inumber % prnums[i] == 0)
@@ -35,9 +48,17 @@ std::vector<int> primarynumbers(int upbound)
 
         if (isprimary)
         {
-            prnums.push_back(inumber);
+            prnums = IncreaseArray(prnums, size);
+            prnums[size] = inumber;
+            size++;
         };
     };
+
+    for (int i = 1; i < size; i++)
+    {
+        std::cout << prnums[i] << " ";
+    };
+    std::cout << std::endl;
 
     return prnums;
 };
@@ -47,12 +68,9 @@ int main()
     int n;
     std::cin >> n;
 
-    std::vector<int> prime = primarynumbers(n);
+    primarynumbers(n);
 
-    for (int j = 0; j < prime.size(); j++)
-    {
-        std::cout << prime[j] << " ";
-    };
+
 
     return 0;
 };

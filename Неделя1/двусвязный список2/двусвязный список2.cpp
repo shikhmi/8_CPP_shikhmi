@@ -89,18 +89,52 @@ void print_reversed(list* cur_list)
 
 void delete_back(list* cur_list)
 {
-    list_item* p_tmp = cur_list->last;
-    cur_list->last = cur_list->last->previous;
-    cur_list->last->next = nullptr;
-    delete p_tmp;
-}
+    if (is_list_empty(cur_list)) 
+    {
+        setlocale(LC_ALL, "Rus");
+        std::cout << "список пуст";
+        return; 
+    };
+
+    if (cur_list->first == cur_list->last) 
+    {
+        list_item* p_tmp = cur_list->first;
+        cur_list->first = nullptr;
+        cur_list->last = nullptr;
+    }//;
+
+    //if(cur_list->first != cur_list->last)
+    else
+    {
+        list_item* p_tmp = cur_list->last;
+        cur_list->last = cur_list->last->previous;
+        cur_list->last->next = nullptr;
+        delete p_tmp;
+    };
+};
 
 void delete_front(list* cur_list)
 {
-    list_item* p_tmp = cur_list->first;
-    cur_list->first = cur_list->first->next;
-    cur_list->last->previous = nullptr;
-    delete p_tmp;
+    if (is_list_empty(cur_list)) 
+    {
+        setlocale(LC_ALL, "Rus");
+        std::cout << "список пуст";
+        return;
+    }
+
+    if (cur_list->last == cur_list->first) 
+    {
+        list_item* p_tmp = cur_list->last;
+        cur_list->first = nullptr;
+        cur_list->last = nullptr;
+    }
+    else
+    {
+        list_item* p_tmp = cur_list->first;
+        cur_list->first = cur_list->first->next;
+        cur_list->last->previous = nullptr;
+        delete p_tmp;
+    }
 }
 
 int main()
@@ -110,19 +144,15 @@ int main()
 
     pushback(&l, 28);
     pushback(&l, 37);
-    pushback(&l, 21);
-    pushback(&l, 4);
-
-    print_list(&l);
-    print_reversed(&l);
-
-    delete_back(&l);
     print_list(&l);
     delete_front(&l);
     print_list(&l);
-
-    pushfront(&l, 377);
+    delete_front(&l);
     print_list(&l);
+    delete_front(&l);
+
+    print_list(&l);
+    print_reversed(&l);
 
     std::cout << is_list_empty(&l) << std::endl;
     std::cout << l.first;
