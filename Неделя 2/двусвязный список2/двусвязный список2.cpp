@@ -114,8 +114,12 @@ int main()
 
     pushback(&l, 28);
     pushback(&l, 37);
-    pushback(&l, 21);
-    pushback(&l, 4);
+    print_list(&l);
+    delete_back(&l);
+    print_list(&l);
+    delete_back(&l);
+    print_list(&l);
+    delete_back(&l);
 
     print_list(&l);
     print_reversed(&l);
