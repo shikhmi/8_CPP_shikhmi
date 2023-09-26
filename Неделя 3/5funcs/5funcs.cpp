@@ -56,17 +56,20 @@ int main()
             }
         }
     }
-
     //определение порядка
     int order[5]{};
     int i = 0;
+    while (f1(a, b) != randomfuncs[i](a, b)) //определение порядка первой функции
+    {
+        i += 1;
+        order[0] = i;
+        
+    }
+    std::cout << "Номер первой функции" << order[0] << " ";
+
+    
     for (int j = 0; j <= 4; j++) { 
-        while (f1(a, b) != randomfuncs[i](a, b)) //определение порядка первой функции
-        {
-            i += 1;
-            order[j] = i;
-            std::cout << order[j] << " ";
-        }
+        
         while (f2(a, b) != randomfuncs[i](a, b)) //определение порядка второй функции
         {
             i += 1;
