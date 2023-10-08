@@ -41,10 +41,16 @@ struct list {
         delete last;
     };
 
-    // Перемещение текущего элемента по списку
+    // Перемещение текущего элемента по списку вперёд
     void move_current_forward()
     {
         current = current->next;
+    };
+
+    // Перемещение текущего элемента по списку назад
+    void move_current_back()
+    {
+        current = current->previous;
     };
 
     // Добавление элемента после текущего
@@ -64,8 +70,10 @@ struct list {
     {
         list_item* p_tmp = current;
         current = current->next;
-        current->previous = current->previous->previous;
-        current->previous->next = current;
+        current->previous = p_tmp->previous;
+        current = p_tmp->previous;
+        current->next = p_tmp->next;
+        current = p_tmp->next;
         delete p_tmp;
     }
 
@@ -90,6 +98,7 @@ struct list {
         if (is_list_empty()) {
             first = p_tmp;
             last = p_tmp;
+            current = p_tmp;
             return;
         }
         last->next = p_tmp;
@@ -104,6 +113,7 @@ struct list {
         if (is_list_empty()) {
             first = p_tmp;
             last = p_tmp;
+            current = p_tmp;
             return;
         }
 
@@ -185,6 +195,8 @@ struct list {
 
 };
 
+
+
 //std::pair<list*, list*> split_list(list* cur_list)
 list* split_list(list* cur_list) 
 {
@@ -229,8 +241,14 @@ int main()
     l.delete_back();
 
 
+
     // Проверка добавления с начала
     l.pushfront(377);
+    l.print_list();
+
+    //split
+    list* l1 = split_list(&l);
+    l1->print_list();
     l.print_list();
 
     std::cout << l.is_list_empty() << std::endl;
