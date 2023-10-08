@@ -32,7 +32,7 @@ void bubblesort(int* l, int* r) {
 	}
 }
 
-int* mergesort(int l[], int size)
+/*int* mergesort(int l[], int size)
 {
 
 	//std::cout << size << std::endl;
@@ -67,9 +67,9 @@ int* mergesort(int l[], int size)
 	std::cout << std::endl;
 
 	return a;
-};
+};*/
 
-int main() 
+int mai() 
 {
 	int a[8] = {8,7,6,5,6,0,2,-1};
 	
@@ -83,4 +83,110 @@ int main()
 
 	return 0;
 };
+
+void print_arr(int* a, int size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		std::cout << a[i] << " ";
+	};
+	std::cout << std::endl;
+};
+
+int* mergesort(int a[], int size, bool(*comparator)(int, int))
+{
+	if (size <= 1) 
+	{ 
+		return a; 
+	};
+
+	int* m1 = mergesort(a, size / 2, comparator);
+	int* m2 = mergesort(a + size / 2, size - (size / 2), comparator);
+
+	int* ans = new int[size];
+	//print_arr(ans, size);
+
+	int ind1 = 0;
+	int ind2 = 0;
+	int f = -1;
+	while (ind1 + ind2 < size)
+	{
+		f = -1;
+
+		if (ind1 == size / 2)
+		{
+			f = 1;
+		};
+
+		if (ind2 == size - (size / 2))
+		{
+			f = 0;
+		};
+
+		if (f < 0 && comparator(m1[ind1], m2[ind2]))
+		{
+			f = 0;
+		};
+		if (f < 0 && comparator(m2[ind2], m1[ind1]))
+		{
+			f = 1;
+		};
+
+		if (f == 1)
+		{
+			ans[ind1 + ind2] = m2[ind2];
+			ind2++;
+		};
+		if (f == 0)
+		{
+			ans[ind1 + ind2] = m1[ind1];
+			ind1++;
+		};
+	};
+	print_arr(ans, size);
+	return ans;
+};
+
+
+bool comp_decr(int a, int b)
+{
+	return a > b;
+};
+
+int count_incr = 0;
+
+bool comp_incr(int a, int b)
+{
+	count_incr++;
+	return a < b;
+};
+
+int count = 0;
+
+bool comp_1000(const int v1, const int v2)
+{
+	count++;
+	if ((v1 % 1000) < (v2 % 1000))
+	{
+		return (v1 % 1000) < (v2 % 1000);
+	}
+	else
+	{
+		return v1 < v2;
+	}
+}
+
+int main()
+{
+	setlocale(LC_ALL, "Rus");
+	int a[8] = { 1006, 2006, 2, 0, 1, 3, 4, 8 };
+	//int b[8] = {};
+	int* b = mergesort(a, 8, comp_incr);
+	print_arr(a, 8);
+	//std::cout << "sorted " << b[0] << std::endl;
+	print_arr(b, 8);
+	std::cout << "число вызовов " << count_incr << std::endl;
+}
+
+
 
