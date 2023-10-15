@@ -127,7 +127,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="complex_numbers.cpp" />
     <ClCompile Include="Ordinary_fraction.cpp" />
     <ClCompile Include="Students.cpp" />
     <ClCompile Include="Students_6.cpp" />

@@ -21,9 +21,6 @@
     <ClCompile Include="Students.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="complex_numbers.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="Vectors.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
