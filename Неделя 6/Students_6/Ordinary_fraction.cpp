@@ -20,7 +20,7 @@ public:
 		while ((i <= denominator) && (i <= numerator))
 		{
 			std::cout << "simplify loop";
-			if (((denominator % i) == 0) || ((numerator % i) == 0))
+			if (((denominator % i) == 0) && ((numerator % i) == 0))
 			{
 				denominator = denominator / i;
 				numerator = numerator / i;
@@ -115,3 +115,10 @@ public:
 		z = other.z;
 	};
 };*/
+
+
+
+
+/*
+Vector3(const Vector3* const other) {};
+*/
