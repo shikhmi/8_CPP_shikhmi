@@ -4,6 +4,16 @@
 //Этот список умеет совсем немного.
 //Добавлять элементы в конец себя и печатать себя.
 
+/*
+    Поработайте над вашей реализацией списка:
+    Рационально распределите поля по private и public секциям.
+    Снабдите его конструктором копирования.
+    Поработайте над типами принимаемых и возвращаемых методами значений (значения, указатели, ссылки, +константность).
+    Во всех заданиях необходимо рационально распределить код по файлам.
+    Проект списка вынесите из папки со второй неделей, и разместите в корне репозитория( там, где недели).
+    В папках с неделями его(и его более старых версий) остаться не должно.
+    */
+
 
 //Эта структура данных необходима для хранения одного элемента списка
 struct list_item {
@@ -19,11 +29,17 @@ struct list_item {
 };
 
 
+
+
 //Эта структура данных необходима для работы со списком в целом
 struct list {
+
+private:
     list_item* first;
     list_item* last;
     list_item* current;
+
+public:
 
     list(list_item* First, list_item* Last) : first(First), last(Last), current(First) {};
 
@@ -41,6 +57,22 @@ struct list {
         delete last;
     };
 
+    int get_first() const
+    {
+        return first->data;
+    };
+
+    int get_current() const
+    {
+        return current->data;
+    };
+
+    int get_last() const
+    {
+        return last->data;
+    };
+
+    friend list* split_list(list*);
     // Перемещение текущего элемента по списку вперёд
     void move_current_forward()
     {
@@ -193,6 +225,52 @@ struct list {
 
     }
 
+    void set_current_to_first() 
+    {
+        current = first;
+    };
+
+    bool current_is_last() const
+    {
+        return current == last;
+    };
+
+    list(list* const other)
+    {
+
+        first = new list_item(other->get_first());
+        last = new list_item(other->get_last());
+        current = first;
+        first->next = last;
+        last->previous = first;
+
+        other->set_current_to_first();
+        while (!other->current_is_last()) 
+        {
+            other->move_current_forward();
+            add_after_current(other->get_current());
+            move_current_forward();
+        };
+
+        /*
+        for (current = first; current != nullptr; current = current->next)
+        {
+            add_after_current(other->get_current());
+        }*/
+    };
+
+    /*
+    Elem* temp = Head;
+    // Копируем элементы списка, начиная с головного,
+    // в свой путем добавления элементов в голову,
+    // таким образом временный список Result будет содержать
+    // элементы в обратном порядке
+    while (temp != 0)
+    {
+        Result.AddHead(temp->data);
+        temp = temp->next;
+    }
+    return Result;*/
 };
 
 
@@ -244,25 +322,23 @@ int main()
 
     // Проверка добавления с начала
     l.pushfront(377);
+    std::cout << "Old list: ";
     l.print_list();
 
+    list list2 = list(l);
+    std::cout << "New list: ";
+    list2.print_list();
     //split
     list* l1 = split_list(&l);
     l1->print_list();
     l.print_list();
 
     std::cout << l.is_list_empty() << std::endl;
-    std::cout << l.first;
+    std::cout << l.get_first();
+
+    
 
     return 0;
-
-
-
-
-
-
-
-
 
     /*РЕфакторинг списка!
     Внесите функции для работы со списком внутрь структуры (должны стать функциями членами).
@@ -272,4 +348,8 @@ int main()
     Приведите main(); к 'правильному' состоянию (демонстрируется корректная работа всех функций, программа объясняет пользователю что происходит)
     Дополните структуру list списка деструктором, не допускающим утечек памяти.
     */
+
+
+    
+
 };
