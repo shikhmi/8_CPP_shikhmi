@@ -1,36 +1,7 @@
 ﻿#include <iostream>
 #include <string>
 #include <fstream>
-
-
-
-
-class WhatDoesTheFoxSay
-{
-public:
-
-	enum WhatDoesTheFoxSayState
-	{
-		cat,
-		bird,
-		fox
-	};
-	
-
-	WhatDoesTheFoxSayState GetState() 
-	{
-		return State;
-	}
-
-	void SetState(WhatDoesTheFoxSayState State)
-	{
-		this->State = State;
-	}
-
-
-private:
-	WhatDoesTheFoxSayState State;
-};
+#include "Ringiding.h"
 
 int main()
 {
