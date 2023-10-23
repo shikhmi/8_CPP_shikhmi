@@ -18,12 +18,6 @@
     <ClCompile Include="Students_6.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Students.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Vectors.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="Ordinary_fraction.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>

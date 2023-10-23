@@ -15,21 +15,39 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="list _fixed.cpp">
+    <ClCompile Include="Class_Diseases5.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="list_item.cpp">
+    <ClCompile Include="Disease.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="list.cpp">
+    <ClCompile Include="Anorexia.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Panic_Attacks.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="OCD.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Bulimia.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="list_item.h">
+    <ClInclude Include="Disease.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="list.h">
+    <ClInclude Include="Anorexia.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Panic_Attacks.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="OCD.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Bulimia.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

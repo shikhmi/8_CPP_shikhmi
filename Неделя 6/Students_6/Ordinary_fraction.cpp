@@ -4,8 +4,6 @@
 Для студентов чей номер по модулю 3 это 2 - Обыкновенными дробями.
 Снабдите их всеми необходимыми для комфортной работы операторами.*/
 #include <iostream>
-
-
 class Ord_Frac
 {
 public:
@@ -16,7 +14,7 @@ public:
 	void simplify()
 	{
 		std::cout << "simplify: " << numerator << " " << denominator << std::endl;
-		int i = 1;
+		int i = 2;
 		while ((i <= denominator) && (i <= numerator))
 		{
 			std::cout << "simplify loop";
@@ -46,6 +44,8 @@ public:
 		simplify();
 	};
 
+	Ord_Frac(const int Num) : numerator(Num), denominator(1) {};
+
 	//присваивание
 	void operator= (const Ord_Frac other)
 	{
@@ -59,6 +59,14 @@ public:
 		Ord_Frac ans = Ord_Frac(numerator * other.denominator + other.numerator * denominator, denominator * other.denominator);
 		return ans;
 	};
+	
+	//дробь + число
+	double operator+ (const double a)
+	{
+		//double ans = numerator + (a * denominator)/ denominator;
+		double ans = a + numerator / double(denominator);
+		return ans;
+	};
 
 	//вычитание дробей
 	Ord_Frac operator- (const Ord_Frac other)
@@ -68,9 +76,9 @@ public:
 	};
 
 	//домножение на число
-	Ord_Frac operator* (const double a)
+	Ord_Frac operator* (int a)
 	{
-		Ord_Frac ans = Ord_Frac(numerator * a, denominator);
+		Ord_Frac ans = Ord_Frac(numerator * a,denominator);
 		return ans;
 	};
 
@@ -88,6 +96,29 @@ public:
 		return ans;
 	};
 
+	Ord_Frac operator- () 
+	{
+		Ord_Frac ans = Ord_Frac(-numerator, denominator);
+		return ans;
+	};
+	/*
+	double operator+ ()
+	{
+		return numerator / double(denominator);
+	};
+	*/
+	Ord_Frac operator+ ()
+	{
+		Ord_Frac ans = Ord_Frac(numerator, denominator);
+		return ans;
+	};
+
+	/*
+	operator double() 
+	{
+		return numerator / double(denominator);
+	};
+	*/
 };
 /*class Vector3
 {

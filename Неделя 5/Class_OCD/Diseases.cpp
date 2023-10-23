@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include "Diseases.h"
 namespace Diseases
 {
 

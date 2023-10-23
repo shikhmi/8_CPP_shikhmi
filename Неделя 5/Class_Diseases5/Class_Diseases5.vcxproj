@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{31ac865c-2496-4399-b914-20ab19f02ed4}</ProjectGuid>
-    <RootNamespace>listfixed</RootNamespace>
+    <ProjectGuid>{381a98a7-1fb0-4f65-8fa7-af394a0adfb4}</ProjectGuid>
+    <RootNamespace>ClassDiseases5</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,13 +127,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="list _fixed.cpp" />
-    <ClCompile Include="list.cpp" />
-    <ClCompile Include="list_item.cpp" />
+    <ClCompile Include="Anorexia.cpp" />
+    <ClCompile Include="Bulimia.cpp" />
+    <ClCompile Include="Class_Diseases5.cpp" />
+    <ClCompile Include="Disease.cpp" />
+    <ClCompile Include="OCD.cpp" />
+    <ClCompile Include="Panic_Attacks.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="list.h" />
-    <ClInclude Include="list_item.h" />
+    <ClInclude Include="Anorexia.h" />
+    <ClInclude Include="Bulimia.h" />
+    <ClInclude Include="Disease.h" />
+    <ClInclude Include="OCD.h" />
+    <ClInclude Include="Panic_Attacks.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

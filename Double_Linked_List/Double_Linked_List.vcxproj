@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{b1558800-25b5-4f0f-aed8-fcf6c7593149}</ProjectGuid>
-    <RootNamespace>ClassOCD</RootNamespace>
+    <ProjectGuid>{d8d67ede-3102-408e-a499-306ef2dd4a3f}</ProjectGuid>
+    <RootNamespace>DoubleLinkedList</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,14 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="Disease.cpp" />
-    <ClCompile Include="Diseases.cpp" />
-    <ClCompile Include="OCD.cpp" />
-    <ClCompile Include="PanicAttacks.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Diseases.h" />
+    <ClCompile Include="Double_Linked_List.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

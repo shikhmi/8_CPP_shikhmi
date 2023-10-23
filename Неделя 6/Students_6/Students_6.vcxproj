@@ -128,9 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Ordinary_fraction.cpp" />
-    <ClCompile Include="Students.cpp" />
     <ClCompile Include="Students_6.cpp" />
-    <ClCompile Include="Vectors.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
