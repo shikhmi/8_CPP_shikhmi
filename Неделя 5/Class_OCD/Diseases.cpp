@@ -1,8 +1,99 @@
 #pragma once
-#include <iostream>
-#include <string>
 #include "Diseases.h"
-namespace Diseases
+
+std::string  Diseases::Disease::storytelling()
+{
+    return "i'm sick :(";
+}
+
+int Diseases::Disease::apathy()
+{
+    return -1;
+};
+
+
+
+
+int Diseases::OCD::excessive_pedantry()
+{
+    return 7;
+};
+int Diseases::OCD::frightening_drives()
+{
+    return 5;
+}
+int Diseases::OCD::apathy()
+{
+    return 3;
+};
+std::string  Diseases::OCD::storytelling()
+{
+    return "Did i close the door?";
+};
+
+
+int Diseases::PanicAttacks::frightening_drives()
+{
+    return 10;
+};
+int Diseases::PanicAttacks::panic_attacks()
+{
+    return 10;
+}
+int Diseases::PanicAttacks::apathy()
+{
+    return 6;
+};
+
+
+int Diseases::Anorexia::fasting()
+{
+    return 10;
+}
+int Diseases::Anorexia::apathy()
+{
+    return 8;
+};
+
+
+int Diseases::Bulimia::overeating()
+{
+    return 10;
+}
+int Diseases::Bulimia::apathy()
+{
+    return 9;
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*namespace Diseases
 {
 
     class Disease {
@@ -80,4 +171,4 @@ namespace Diseases
             return 9;
         };
     };
-};
+};*/

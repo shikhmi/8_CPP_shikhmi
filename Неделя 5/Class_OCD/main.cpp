@@ -13,7 +13,7 @@
 //#include "Drugs.cpp"
 #include <iostream>
 #include <string>
-#include "Diseases.cpp"
+#include "Diseases.h"
 
 /*class Diseases
 {

@@ -128,10 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Disease.cpp" />
     <ClCompile Include="Diseases.cpp" />
-    <ClCompile Include="OCD.cpp" />
-    <ClCompile Include="PanicAttacks.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Diseases.h" />
