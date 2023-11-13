@@ -1,8 +1,3 @@
-/*Реализуйте структуру / класс для работы с :
-Для студентов с номерами кратными 3 - 3 - мерными векторами.
-Для студентов чей номер по модулю 3 это 1 - Комплексными числами.
-Для студентов чей номер по модулю 3 это 2 - Обыкновенными дробями.
-Снабдите их всеми необходимыми для комфортной работы операторами.*/
 #include <iostream>
 #include <exception>
 
@@ -11,7 +6,7 @@ class UserError : public std::exception
 private:
 	std::string error;
 public:
-	UserError(std::string except) : error(except){};
+	UserError(std::string except) : error(except) {};
 
 	const char* what() const noexcept override
 	{
@@ -49,7 +44,7 @@ public:
 
 
 	//проверка на ноль в знаменателе
-	Ord_Frac(const int Num, const int Dem) : numerator(Num), denominator(Dem) 
+	Ord_Frac(const int Num, const int Dem) : numerator(Num), denominator(Dem)
 	{
 
 		if (denominator == 0)
@@ -78,7 +73,7 @@ public:
 		Ord_Frac ans = Ord_Frac(numerator * other.denominator + other.numerator * denominator, denominator * other.denominator);
 		return ans;
 	};
-	
+
 	//дробь + число
 	double operator+ (const double a)
 	{
@@ -97,7 +92,7 @@ public:
 	//домножение на число
 	Ord_Frac operator* (int a)
 	{
-		Ord_Frac ans = Ord_Frac(numerator * a,denominator);
+		Ord_Frac ans = Ord_Frac(numerator * a, denominator);
 		return ans;
 	};
 
@@ -115,7 +110,7 @@ public:
 		return ans;
 	};
 
-	Ord_Frac operator- () 
+	Ord_Frac operator- ()
 	{
 		Ord_Frac ans = Ord_Frac(-numerator, denominator);
 		return ans;
@@ -133,7 +128,7 @@ public:
 	};
 
 	/*
-	operator double() 
+	operator double()
 	{
 		return numerator / double(denominator);
 	};

@@ -269,21 +269,20 @@ list* split_list(list* cur_list)
 {
     //list* list1 = new list();
     list* list1 = new list(cur_list->first, cur_list->current);
-    /*list1->last->next = nullptr;
-    cur_list->first = nullptr;
-    cur_list->last = nullptr;
-    cur_list->current = nullptr;*/
-    //list* list2 = new list(cur_list->current->next, cur_list->last);
-    /*
+    list* list2 = new list(cur_list->current->next, cur_list->last);
+
 
     list2->first->previous = nullptr;
+    list1->last->next = nullptr;
+    cur_list->first = nullptr;
+    cur_list->last = nullptr;
+    cur_list->current = nullptr;
 
 
 
-    delete cur_list;
-    return std::make_pair(list1, list2)
 
-    */
+    //delete cur_list;
+    
     return list1;
 };
 
@@ -300,6 +299,9 @@ int main()
     l.delete_back();
     l.print_list();
     l.delete_back();
+    l.pushback(34);
+    l.pushfront(7);
+    l.pushback(7);
 
     // Проверка добавления с начала
     l.pushfront(377);
